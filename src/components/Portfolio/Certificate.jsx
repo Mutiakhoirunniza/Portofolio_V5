@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { Modal, IconButton, Box, Fade, Backdrop, Zoom, Typography } from "@mui/material"
+import { useState } from "react"
+import { Modal, IconButton, Box, Backdrop, Typography } from "@mui/material"
 import CloseIcon from "@mui/icons-material/Close"
 import FullscreenIcon from "@mui/icons-material/Fullscreen"
-import { FileText, Download } from "lucide-react"
+import { Download } from "lucide-react"
 
 const Certificate = ({ ImgSertif, PdfLink, SubImages = [] }) => {
 	const [open, setOpen] = useState(false)
@@ -69,6 +69,7 @@ const Certificate = ({ ImgSertif, PdfLink, SubImages = [] }) => {
 							objectFit: "cover",
 							filter: "contrast(1.10) brightness(0.9) saturate(1.1)",
 							transition: "all 0.3s ease",
+							aspectRatio: "16/11.5",
 						}}
 						onClick={handleOpen}
 					/>
@@ -106,8 +107,10 @@ const Certificate = ({ ImgSertif, PdfLink, SubImages = [] }) => {
 						opacity: 0,
 						transition: "all 0.3s ease",
 						backgroundColor: "rgba(0,0,0,0.3)",
+						cursor: "pointer",
 						zIndex: 2,
-					}}>
+					}}
+					onClick={handleOpen}>
 					{/* Hover Buttons */}
 					<Box
 						className="hover-buttons"

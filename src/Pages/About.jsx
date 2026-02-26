@@ -182,6 +182,9 @@ const AboutPage = () => {
     <div
       className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"
       id="About"
+      itemScope
+      itemType="https://schema.org/Person"
+
     >
       <Header />
 
@@ -200,8 +203,9 @@ const AboutPage = () => {
                 className="block mt-2 text-gray-200 whitespace-nowrap"
                 data-aos="fade-right"
                 data-aos-duration="1300"
+                itemProp="name"
               >
-                Diah Mutia Choirunnisa
+                Mutia Khoirunniza
               </span>
             </h2>
 

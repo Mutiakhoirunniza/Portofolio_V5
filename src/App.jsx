@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import "./index.css";
+import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import AnimatedBackground from "./components/Common/Background";
@@ -20,7 +22,9 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
     <>
       <AnimatePresence mode="wait">
         {showWelcome && (
-          <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
+          <Suspense fallback={null}>
+            <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
+          </Suspense>
         )}
       </AnimatePresence>
 
@@ -30,7 +34,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           <ScrollProgress />
           <LiveClock />
           <Navbar />
-          <AnimatedBackground />
+      
           <Home />
           <About />
           <Portofolio />

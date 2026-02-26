@@ -2,9 +2,9 @@
 
 Hello everyone! 👋
 
-I'm **Diah Mutia Choirunnisa**. I'm sharing my personal portfolio website, which has been meticulously refactored using **Clean Architecture** principles. This project showcases my journey as a developer, highlighting projects ranging from web development to AI-driven systems.
+I'm **Mutia Khoirunniza**. I'm sharing my personal portfolio website, which has been meticulously refactored using **Clean Architecture** principles. This project showcases my journey as a developer, highlighting projects ranging from web development to AI-driven systems.
 
-## 🚀 Live Demo
+**Live Demo:** [https://www.diahmutia.my.id/](https://www.diahmutia.my.id/)
 
 **Website Link:** [https://www.diahmutia.my.id/](https://www.diahmutia.my.id/)
 
@@ -80,7 +80,7 @@ npm run build
 
 ## 📞 Get In Touch
 
-**Diah Mutia Choirunnisa**
+**Mutia Khoirunniza**
 - **Website:** [diahmutia.my.id](https://www.diahmutia.my.id/)
 - **GitHub:** [Mutiakhoirunniza](https://github.com/Mutiakhoirunniza)
 - **LinkedIn:** [diahmutia](https://www.linkedin.com/in/diahmutia/)
