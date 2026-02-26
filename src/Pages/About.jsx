@@ -214,8 +214,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              Lintas jurusan dari SMK Administrasi Perkantoran ke Teknik Informatika Universitas Krisnadwipayana, saya tertarik mengembangkan aplikasi web yang fungsional dan bermanfaat.
-              Sebagai Web Developer, saya fokus menciptakan pengalaman digital yang mudah digunakan, menarik, dan terus mengeksplorasi teknologi baru untuk setiap proyek yang saya kerjakan.
+              Transitioning from Office Administration at vocational high school to Informatics Engineering at Krisnadwipayana University, I developed a strong interest in building functional and impactful web applications. As a Web Developer, I focus on creating user-friendly, engaging digital experiences while continuously exploring new technologies to bring the best out of every project I work on.
             </p>
 
             {/* Quote Section */}

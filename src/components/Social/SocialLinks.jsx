@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import PresenceWidget from "./PresenceWidget";
+import PresenceWidget from "../PresenceWidget";
 
 const socialLinks = [
   {
@@ -296,7 +296,7 @@ const SocialLinks = () => {
             </a>
           ))}
         </div>
-  
+
       </div>
     </div>
   );

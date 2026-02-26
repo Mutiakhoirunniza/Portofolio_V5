@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState, lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import "./index.css";
-import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import AnimatedBackground from "./components/Common/Background";
@@ -34,7 +33,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           <ScrollProgress />
           <LiveClock />
           <Navbar />
-      
+
           <Home />
           <About />
           <Portofolio />
@@ -79,13 +78,15 @@ function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
-        <Route path="/project/:id" element={<ProjectPageLayout />} />
-        <Route path="*" element={<NotFoundPage />} /> {/* Ini route 404 */}
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+          <Route path="/project/:id" element={<ProjectPageLayout />} />
+          <Route path="*" element={<NotFoundPage />} /> {/* Ini route 404 */}
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

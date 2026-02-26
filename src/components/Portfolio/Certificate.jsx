@@ -1,4 +1,5 @@
 import { useState } from "react"
+import PropTypes from "prop-types"
 import { Modal, IconButton, Box, Backdrop, Typography } from "@mui/material"
 import CloseIcon from "@mui/icons-material/Close"
 import FullscreenIcon from "@mui/icons-material/Fullscreen"
@@ -273,6 +274,12 @@ const Certificate = ({ ImgSertif, PdfLink, SubImages = [] }) => {
 			</Modal>
 		</Box>
 	)
+}
+
+Certificate.propTypes = {
+	ImgSertif: PropTypes.string.isRequired,
+	PdfLink: PropTypes.string,
+	SubImages: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default Certificate

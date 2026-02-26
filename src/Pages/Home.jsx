@@ -76,12 +76,12 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Mutia Khoirunniza — Frontend Web Developer</title>
-        <meta name="description" content="Website resmi Mutia Khoirunniza, Front-End Web Developer. Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupaya memberikan solusi terbaik dalam setiap proyek yang saya kerjakan." />
+        <title>Mutia Khoirunniza - Web Developer</title>
+        <meta name="description" content="Website resmi Mutia Khoirunniza, Web Developer. Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupaya memberikan solusi terbaik dalam setiap proyek yang saya kerjakan." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://diahmutia.my.id" />
-        <meta property="og:title" content="Mutia Khoirunniza — Frontend Web Developer" />
-        <meta property="og:description" content="Website resmi dan portofolio Mutia Khoirunniza, Front-End Web Developer." />
+        <meta property="og:title" content="Mutia Khoirunniza - Web Developer" />
+        <meta property="og:description" content="Website resmi dan portofolio Mutia Khoirunniza, Web Developer." />
         <meta property="og:url" content="https://diahmutia.my.id" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{`
@@ -89,7 +89,7 @@ const Home = () => {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Mutia Khoirunniza",
-            "jobTitle": "Frontend Developer",
+            "jobTitle": "Web Developer",
             "url": "https://diahmutia.my.id",
             "sameAs": [
               "https://github.com/Mutiakhoirunniza",
