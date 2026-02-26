@@ -79,10 +79,10 @@ const Home = () => {
         <title>Mutia Khoirunniza - Web Developer</title>
         <meta name="description" content="Website resmi Mutia Khoirunniza, Web Developer. Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupaya memberikan solusi terbaik dalam setiap proyek yang saya kerjakan." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://diahmutia.my.id" />
+        <link rel="canonical" href="https://diahmutiakhoirunniza.vercel.app" />
         <meta property="og:title" content="Mutia Khoirunniza - Web Developer" />
         <meta property="og:description" content="Website resmi dan portofolio Mutia Khoirunniza, Web Developer." />
-        <meta property="og:url" content="https://diahmutia.my.id" />
+        <meta property="og:url" content="https://diahmutiakhoirunniza.vercel.app" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{`
           {
@@ -90,7 +90,7 @@ const Home = () => {
             "@type": "Person",
             "name": "Mutia Khoirunniza",
             "jobTitle": "Web Developer",
-            "url": "https://diahmutia.my.id",
+            "url": "https://diahmutiakhoirunniza.vercel.app",
             "sameAs": [
               "https://github.com/Mutiakhoirunniza",
               "https://www.linkedin.com/in/diahmutia/",

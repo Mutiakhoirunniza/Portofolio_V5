@@ -144,7 +144,7 @@ const ProjectDetails = () => {
   }
 
   const toSlug = (title) => title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
-  const projectUrl = `https://diahmutia.my.id/project/${toSlug(project.Title)}`;
+  const projectUrl = `https://diahmutiakhoirunniza.vercel.app/project/${toSlug(project.Title)}`;
 
   return (
     <>
@@ -181,7 +181,7 @@ const ProjectDetails = () => {
             "author": {
               "@type": "Person",
               "name": "Mutia Khoirunniza",
-              "url": "https://diahmutia.my.id"
+              "url": "https://diahmutiakhoirunniza.vercel.app"
             }
           }
         `}</script>

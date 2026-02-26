@@ -4,9 +4,9 @@ Hello everyone! 👋
 
 I'm **Mutia Khoirunniza**. I'm sharing my personal portfolio website, which has been meticulously refactored using **Clean Architecture** principles. This project showcases my journey as a developer, highlighting projects ranging from web development to AI-driven systems.
 
-**Live Demo:** [https://www.diahmutia.my.id/](https://www.diahmutia.my.id/)
+**Live Demo:** [https://www.diahmutiakhoirunniza.vercel.app/](https://www.diahmutiakhoirunniza.vercel.app/)
 
-**Website Link:** [https://www.diahmutia.my.id/](https://www.diahmutia.my.id/)
+**Website Link:** [https://www.diahmutiakhoirunniza.vercel.app/](https://www.diahmutiakhoirunniza.vercel.app/)
 
 ## 🛠️ Tech Stack & Key Libraries
 
@@ -81,7 +81,7 @@ npm run build
 ## 📞 Get In Touch
 
 **Mutia Khoirunniza**
-- **Website:** [diahmutia.my.id](https://www.diahmutia.my.id/)
+- **Website:** [diahmutiakhoirunniza.vercel.app](https://www.diahmutiakhoirunniza.vercel.app/)
 - **GitHub:** [Mutiakhoirunniza](https://github.com/Mutiakhoirunniza)
 - **LinkedIn:** [diahmutia](https://www.linkedin.com/in/diahmutia/)
 
