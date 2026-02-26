@@ -1,111 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Share2, User, Mail, MessageSquare, Send } from "lucide-react";
-import { Link } from "react-router-dom";
-import SocialLinks from "../components/SocialLinks";
-import Komentar from "../components/Commentar";
-import Swal from "sweetalert2";
+import SocialLinks from "../components/Social/SocialLinks";
+import ProfessionalFAQ from "../components/Feedback/ProfessionalFAQ";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import axios from "axios";
+import { useContactForm } from "../hooks/useContactForm";
+import { useShare } from "../hooks/useShare";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { formData, isSubmitting, handleChange, handleSubmit } = useContactForm();
+  const { handleShare } = useShare();
 
   useEffect(() => {
     AOS.init({
       once: false,
     });
   }, []);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    Swal.fire({
-      title: 'Mengirim Pesan...',
-      html: 'Harap tunggu selagi kami mengirim pesan Anda',
-      allowOutsideClick: false,
-      didOpen: () => {
-        Swal.showLoading();
-      }
-    });
-
-    try {
-      // Ganti dengan email Anda di FormSubmit
-      const formSubmitUrl = 'https://formsubmit.co/ekizulfarrachman@gmail.com';
-      
-      // Siapkan data form untuk FormSubmit
-      const submitData = new FormData();
-      submitData.append('name', formData.name);
-      submitData.append('email', formData.email);
-      submitData.append('message', formData.message);
-      submitData.append('_subject', 'Pesan Baru dari Website Portfolio');
-      submitData.append('_captcha', 'false'); // Nonaktifkan captcha
-      submitData.append('_template', 'table'); // Format email sebagai tabel
-
-      await axios.post(formSubmitUrl, submitData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-
-     
-      Swal.fire({
-        title: 'Berhasil!',
-        text: 'Pesan Anda telah berhasil terkirim!',
-        icon: 'success',
-        confirmButtonColor: '#6366f1',
-        timer: 2000,
-        timerProgressBar: true
-      });
-
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-
-    } catch (error) {
-      if (error.request && error.request.status === 0) {
-        Swal.fire({
-          title: 'Berhasil!',
-          text: 'Pesan Anda telah berhasil terkirim!',
-          icon: 'success',
-          confirmButtonColor: '#6366f1',
-          timer: 2000,
-          timerProgressBar: true
-        });
-
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
-      } else {
-        Swal.fire({
-          title: 'Gagal!',
-          text: 'Terjadi kesalahan. Silakan coba lagi nanti.',
-          icon: 'error',
-          confirmButtonColor: '#6366f1'
-        });
-      }
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="px-[5%] sm:px-[5%] lg:px-[10%] " >
@@ -143,7 +53,6 @@ const ContactPage = () => {
       >
         <div className="container px-[1%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[45%_55%] 2xl:grid-cols-[35%_65%] gap-12" >
           <div
-        
             className="bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl p-5 py-10 sm:p-10 transform transition-all duration-500 hover:shadow-[#6366f1]/10"
           >
             <div className="flex justify-between items-start mb-8">
@@ -155,10 +64,16 @@ const ContactPage = () => {
                   Ada yang ingin didiskusikan? Kirim saya pesan dan mari kita bicara.
                 </p>
               </div>
-              <Share2 className="w-10 h-10 text-[#6366f1] opacity-50" />
+              <button
+                onClick={handleShare}
+                className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors group"
+                title="Share Portfolio"
+              >
+                <Share2 className="w-6 h-6 text-[#6366f1] opacity-50 group-hover:opacity-100 transition-opacity" />
+              </button>
             </div>
 
-            <form 
+            <form
               onSubmit={handleSubmit}
               className="space-y-6"
             >
@@ -229,8 +144,8 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="  bg-white/5 backdrop-blur-xl rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-500 hover:shadow-[#6366f1]/10">
-            <Komentar />
+          <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-500 hover:shadow-[#6366f1]/10">
+            <ProfessionalFAQ />
           </div>
         </div>
       </div>
