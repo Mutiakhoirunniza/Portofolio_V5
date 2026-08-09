@@ -28,9 +28,7 @@ export const useContactForm = () => {
             formDatabase.append("email", formData.email);
             formDatabase.append("message", formData.message);
 
-            const response = await axios.post("https://formsubmit.co/ajax/2bf5d94d82a30ce77d1316390347bda5", formDatabase, {
-                headers: { "Content-Type": "multipart/form-data" },
-            });
+            const response = await axios.post("https://formsubmit.co/ajax/2bf5d94d82a30ce77d1316390347bda5", formDatabase);
 
             if (response.status === 200) {
                 Swal.fire({
@@ -43,7 +41,8 @@ export const useContactForm = () => {
                 });
                 setFormData({ name: "", email: "", message: "" });
             }
-        } catch {
+        } catch (error) {
+            console.error("Contact form submission failed:", error);
             Swal.fire({
                 title: 'Error!',
                 text: 'Terjadi kesalahan. Silakan coba lagi nanti.',

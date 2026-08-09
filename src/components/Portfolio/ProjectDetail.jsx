@@ -25,14 +25,11 @@ const TechBadge = ({ tech }) => {
   const Icon = TECH_ICONS[tech] || TECH_ICONS["default"];
 
   return (
-    <div className="group relative overflow-hidden px-3 py-2 md:px-4 md:py-2.5 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl border border-blue-500/10 hover:border-blue-500/30 transition-all duration-300 cursor-default">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
-      <div className="relative flex items-center gap-1.5 md:gap-2">
-        <Icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-400 group-hover:text-blue-300 transition-colors" />
-        <span className="text-xs md:text-sm font-medium text-blue-300/90 group-hover:text-blue-200 transition-colors">
-          {tech}
-        </span>
-      </div>
+    <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 hover:border-indigo-500/40 transition-all duration-300">
+      <Icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-indigo-400" />
+      <span className="text-xs md:text-sm font-medium text-indigo-300">
+        {tech}
+      </span>
     </div>
   );
 };
@@ -43,12 +40,9 @@ TechBadge.propTypes = {
 
 const FeatureItem = ({ feature }) => {
   return (
-    <li className="group relative flex items-start space-x-3 p-3 md:p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-blue-500/30 hover:bg-blue-500/5 transition-all duration-300">
-      <div className="relative mt-1">
-        <div className="absolute -inset-1 bg-blue-500/20 rounded-full blur group-hover:opacity-100 opacity-0 transition-opacity" />
-        <CheckCircle2 className="relative w-4 h-4 md:w-5 md:h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
-      </div>
-      <span className="text-sm md:text-base text-gray-300 group-hover:text-white transition-colors leading-relaxed">
+    <li className="flex items-start space-x-3 p-3 md:p-4 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300">
+      <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-indigo-400 mt-1 shrink-0" />
+      <span className="text-sm md:text-base text-slate-300 leading-relaxed">
         {feature}
       </span>
     </li>
@@ -64,37 +58,36 @@ const ProjectStats = ({ project }) => {
   const featuresCount = project?.Features?.length || 0;
 
   return (
-    <div className="grid grid-cols-2 gap-3 md:gap-4 p-3 md:p-4 bg-[#0a0a1a] rounded-xl overflow-hidden relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-50 blur-2xl z-0" />
-      <div className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-blue-500/20 transition-all duration-300 hover:scale-105 hover:border-blue-500/50 hover:shadow-lg">
-        <div className="bg-blue-500/20 p-1.5 md:p-2 rounded-full">
+    <div className="grid grid-cols-2 gap-3 md:gap-4 p-3 md:p-4 bg-white/[0.03] rounded-xl border border-white/10">
+      <div className="flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-white/10 transition-all duration-300 hover:border-indigo-500/30">
+        <div className="bg-indigo-500/10 p-1.5 md:p-2 rounded-full">
           <Code2
-            className="text-blue-300 w-4 h-4 md:w-6 md:h-6"
+            className="text-indigo-400 w-4 h-4 md:w-6 md:h-6"
             strokeWidth={1.5}
           />
         </div>
         <div className="flex-grow">
-          <div className="text-lg md:text-xl font-semibold text-blue-200">
+          <div className="text-lg md:text-xl font-semibold text-white">
             {techStackCount}
           </div>
-          <div className="text-[10px] md:text-xs text-gray-400">
+          <div className="text-[10px] md:text-xs text-slate-500">
             Total Teknologi
           </div>
         </div>
       </div>
 
-      <div className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-purple-500/20 transition-all duration-300 hover:scale-105 hover:border-purple-500/50 hover:shadow-lg">
-        <div className="bg-purple-500/20 p-1.5 md:p-2 rounded-full">
+      <div className="flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-white/10 transition-all duration-300 hover:border-indigo-500/30">
+        <div className="bg-indigo-500/10 p-1.5 md:p-2 rounded-full">
           <Layers
-            className="text-purple-300 w-4 h-4 md:w-6 md:h-6"
+            className="text-indigo-400 w-4 h-4 md:w-6 md:h-6"
             strokeWidth={1.5}
           />
         </div>
         <div className="flex-grow">
-          <div className="text-lg md:text-xl font-semibold text-purple-200">
+          <div className="text-lg md:text-xl font-semibold text-white">
             {featuresCount}
           </div>
-          <div className="text-[10px] md:text-xs text-gray-400">
+          <div className="text-[10px] md:text-xs text-slate-500">
             Fitur Utama
           </div>
         </div>
@@ -117,9 +110,9 @@ const handleGithubClick = (githubLink) => {
       title: "Source Code Private",
       text: "Maaf, source code untuk proyek ini bersifat privat.",
       confirmButtonText: "Mengerti",
-      confirmButtonColor: "#3085d6",
-      background: "#030014",
-      color: "#ffffff",
+      confirmButtonColor: "#6366f1",
+      background: "#0f0f23",
+      color: "#f1f5f9",
     });
     return false;
   }
@@ -159,7 +152,7 @@ const ProjectDetails = () => {
     return (
       <div className="min-h-screen bg-[#030014] flex items-center justify-center">
         <div className="text-center space-y-6 animate-fadeIn">
-          <div className="w-16 h-16 md:w-24 md:h-24 mx-auto border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin" />
+          <div className="w-16 h-16 md:w-24 md:h-24 mx-auto border-4 border-indigo-500/20 border-t-indigo-500 rounded-full animate-spin" />
           <h2 className="text-xl md:text-3xl font-bold text-white">
             Loading Project...
           </h2>
@@ -213,46 +206,34 @@ const ProjectDetails = () => {
 
 
       <div className="min-h-screen bg-[#030014] px-[2%] sm:px-0 relative overflow-hidden">
-        <div className="fixed inset-0">
-          <div className="absolute -inset-[10px] opacity-20">
-            <div className="absolute top-0 -left-4 w-72 md:w-96 h-72 md:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
-            <div className="absolute top-0 -right-4 w-72 md:w-96 h-72 md:h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
-            <div className="absolute -bottom-8 left-20 w-72 md:w-96 h-72 md:h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
-          </div>
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
-        </div>
-
         <div className="relative">
           <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-16">
             <div className="flex items-center space-x-2 md:space-x-4 mb-8 md:mb-12 animate-fadeIn">
               <button
                 onClick={() => navigate(-1)}
-                className="group inline-flex items-center space-x-1.5 md:space-x-2 px-3 md:px-5 py-2 md:py-2.5 bg-white/5 backdrop-blur-xl rounded-xl text-white/90 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 text-sm md:text-base"
+                className="group inline-flex items-center space-x-1.5 md:space-x-2 px-3 md:px-5 py-2 md:py-2.5 bg-white/5 rounded-xl text-slate-300 hover:text-indigo-300 transition-all duration-300 border border-white/10 hover:border-indigo-500/30 text-sm md:text-base"
               >
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" />
                 <span>Back</span>
               </button>
-              <div className="flex items-center space-x-1 md:space-x-2 text-sm md:text-base text-white/50">
+              <div className="flex items-center space-x-1 md:space-x-2 text-sm md:text-base text-slate-500">
                 <span>Projects</span>
                 <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
-                <span className="text-white/90 truncate">{project.Title}</span>
+                <span className="text-slate-300 truncate">{project.Title}</span>
               </div>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
               <div className="space-y-6 md:space-y-10 animate-slideInLeft">
                 <div className="space-y-4 md:space-y-6">
-                  <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
+                  <h1 className="text-3xl md:text-6xl font-bold text-white tracking-tight leading-tight">
                     {project.Title}
                   </h1>
-                  <div className="relative h-1 w-16 md:w-24">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-sm" />
-                  </div>
+                  <div className="h-1.5 w-16 md:w-24 bg-indigo-500 rounded-full" />
                 </div>
 
-                <div className="prose prose-invert max-w-none">
-                  <p className="text-base md:text-lg text-gray-300/90 leading-relaxed">
+                <div className="max-w-none">
+                  <p className="text-base md:text-lg text-slate-400 leading-relaxed">
                     {project.Description}
                   </p>
                 </div>
@@ -264,42 +245,49 @@ const ProjectDetails = () => {
                     href={project.Link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 text-blue-300 rounded-xl transition-all duration-300 border border-blue-500/20 hover:border-blue-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                    className="group inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition-all duration-300 shadow-sm hover:shadow-md text-sm md:text-base"
                   >
-                    <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-blue-600/10 to-purple-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
-                    <ExternalLink className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
-                    <span className="relative font-medium">Live Demo</span>
+                    <ExternalLink className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
+                    <span className="font-medium">Live Demo</span>
                   </a>
 
                   <a
                     href={project.Github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 rounded-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                    className="group inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-white/5 hover:border-indigo-500/50 hover:text-indigo-300 text-slate-300 rounded-xl transition-all duration-300 border border-white/10 text-sm md:text-base"
                     onClick={(e) => !handleGithubClick(project.Github) && e.preventDefault()}
                   >
-                    <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-purple-600/10 to-pink-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
-                    <Github className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
-                    <span className="relative font-medium">Github</span>
+                    <Github className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
+                    <span className="font-medium">Github</span>
                   </a>
-
-                  {project.AdditionalLinks && project.AdditionalLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-6 py-2 md:py-3 bg-[#0a0a1a] hover:bg-white/5 text-gray-400 hover:text-white rounded-xl transition-all duration-300 border border-white/10 hover:border-white/20 backdrop-blur-xl overflow-hidden text-xs md:text-sm"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                      <span className="relative font-medium">{link.label}</span>
-                    </a>
-                  ))}
                 </div>
 
+                {project.AdditionalLinks && project.AdditionalLinks.length > 0 && (
+                  <div className="space-y-2">
+                    <p className="text-xs uppercase tracking-wider text-slate-500 font-medium">
+                      Portal Lain
+                    </p>
+                    <div className="flex flex-wrap gap-3 md:gap-4">
+                      {project.AdditionalLinks.map((link, index) => (
+                        <a
+                          key={index}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-6 py-2 md:py-3 bg-white/5 hover:bg-indigo-500/10 text-slate-400 hover:text-indigo-300 rounded-xl transition-all duration-300 border border-white/10 hover:border-indigo-500/30 text-xs md:text-sm"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                          <span className="font-medium">{link.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 <div className="space-y-4 md:space-y-6">
-                  <h3 className="text-lg md:text-xl font-semibold text-white/90 mt-[3rem] md:mt-0 flex items-center gap-2 md:gap-3">
-                    <Code2 className="w-4 h-4 md:w-5 md:h-5 text-blue-400" />
+                  <h3 className="text-lg md:text-xl font-semibold text-white mt-[3rem] md:mt-0 flex items-center gap-2 md:gap-3">
+                    <Code2 className="w-4 h-4 md:w-5 md:h-5 text-indigo-400" />
                     Technologies Used
                   </h3>
                   {project.TechStack.length > 0 ? (
@@ -309,7 +297,7 @@ const ProjectDetails = () => {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm md:text-base text-gray-400 opacity-50">
+                    <p className="text-sm md:text-base text-slate-500">
                       No technologies added.
                     </p>
                   )}
@@ -317,25 +305,22 @@ const ProjectDetails = () => {
               </div>
 
               <div className="space-y-6 md:space-y-10 animate-slideInRight">
-                <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#030014] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-sm group">
                   <img
                     src={project.Img}
                     alt={project.Title}
                     className="w-full  object-cover transform transition-transform duration-700 will-change-transform group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/10 transition-colors duration-300 rounded-2xl" />
                 </div>
 
                 {/* Fitur Utama */}
-                <div className="bg-white/[0.02] backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-white/10 space-y-8 hover:border-white/20 transition-colors duration-300 group">
+                <div className="bg-white/5 rounded-3xl p-6 md:p-10 border border-white/10 shadow-sm space-y-8 hover:border-white/20 transition-colors duration-300 group">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold text-white/90 flex items-center gap-3">
-                      <Star className="w-6 h-6 text-yellow-400 group-hover:rotate-[20deg] transition-transform duration-300" />
+                    <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                      <Star className="w-6 h-6 text-amber-400 group-hover:rotate-[20deg] transition-transform duration-300" />
                       Key Features
                     </h3>
-                    <div className="hidden md:block h-px flex-grow mx-6 bg-gradient-to-r from-yellow-400/20 to-transparent" />
+                    <div className="hidden md:block h-px flex-grow mx-6 bg-white/10" />
                   </div>
 
                   {project.Features.length > 0 ? (
@@ -345,7 +330,7 @@ const ProjectDetails = () => {
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-gray-400 opacity-50 text-center py-4">No features added yet.</p>
+                    <p className="text-slate-500 text-center py-4">No features added yet.</p>
                   )}
                 </div>
               </div>
@@ -354,29 +339,6 @@ const ProjectDetails = () => {
         </div>
 
         <style>{`
-        @keyframes blob {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
-        .animate-blob {
-          animation: blob 10s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
         .animate-fadeIn {
           animation: fadeIn 0.7s ease-out;
         }

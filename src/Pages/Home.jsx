@@ -115,14 +115,14 @@ const Home = () => {
 
                   {/* Typing Effect */}
                   <div className="h-8 flex items-center" data-aos="fade-up" data-aos-delay="800">
-                    <span className="text-xl md:text-2xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
+                    <span className="text-xl md:text-2xl text-slate-300 font-light">
                       {text}
                     </span>
-                    <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"></span>
+                    <span className="w-[3px] h-6 bg-indigo-500 ml-1 animate-blink"></span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
+                  <p className="text-base md:text-lg text-slate-400 max-w-xl leading-relaxed font-light"
                     data-aos="fade-up"
                     data-aos-delay="1000">
                     Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
@@ -157,20 +157,9 @@ const Home = () => {
                 data-aos="fade-left"
                 data-aos-delay="600">
                 <div className="relative w-full opacity-90">
-                  <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
-                    }`}>
-                  </div>
-
                   <div className={`relative lg:left-12 z-10 w-full opacity-90 transform transition-transform duration-500 ${isHovering ? "scale-105" : "scale-100"
                     }`}>
                     <DotLottieReact {...lottieOptions} />
-                  </div>
-
-                  <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${isHovering ? "opacity-50" : "opacity-20"
-                    }`}>
-                    <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 ${isHovering ? "scale-110" : "scale-100"
-                      }`}>
-                    </div>
                   </div>
                 </div>
               </div>

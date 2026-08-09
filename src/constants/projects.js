@@ -4,7 +4,7 @@ export const PROJECTS = [
         Title: "Healthify",
         Description: "Sistem Manajemen Layanan Kesehatan terintegrasi yang menghubungkan pasien, dokter, dan admin dalam satu ekosistem, didukung oleh backend Golang yang tangguh serta integrasi AI untuk layanan kesehatan modern.",
         Img: "/projects/healthify.jpg",
-        Link: "https://healthify-reactapp.vercel.app/",
+        Link: "https://fe-react-landing-page.vercel.app/",
         Github: "https://github.com/Health-Care-System/BackEnd-Golang",
         TechStack: ["GO", "Echo Framework", "GORM", "MySQL", "Google Cloud Platform", "Google Cloud Run", "Google Cloud Storage", "OpenAI", "JSON Web Token", "SMTP", "Cloudflare", "Postman"],
         Features: [
@@ -16,8 +16,8 @@ export const PROJECTS = [
             "Interactive Landing Page with Real-time Notifications"
         ],
         AdditionalLinks: [
-            { label: "Doctor Portal", url: "https://healthify-doctor.vercel.app/login" },
-            { label: "Admin Portal", url: "https://healthify-admin.vercel.app/login" },
+            { label: "Doctor Portal", url: "https://fe-react-doctor.vercel.app/login" },
+            { label: "Admin Portal", url: "https://fe-react-admin-one.vercel.app/login" },
             { label: "API Docs", url: "https://documenter.getpostman.com/view/31533532/2s9Ykq6L64" }
         ]
     },
@@ -41,7 +41,7 @@ export const PROJECTS = [
     {
         id: 3,
         Title: "CGV Aldmic",
-        Description: "Sistem pemesanan tiket bioskop modern yang dirancang untuk memudahkan pencarian film, pemilihan kursi, dan manajemen reservasi secara real-time.",
+        Description: "Sistem pemesanan tiket bioskop modern yang dirancang untuk memudahkan pencarian film, pemilihan kursi, dan manajemen reservasi secara real-time. Demo login — Username: aldmic, Password: 123abc123",
         Img: "/projects/cgvaldmic.jpg",
         Link: "https://cgv-aldmic.vercel.app/login",
         Github: "https://github.com/Mutiakhoirunniza/CGVAldmic",

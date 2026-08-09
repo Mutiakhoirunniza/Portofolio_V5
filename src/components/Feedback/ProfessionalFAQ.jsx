@@ -22,10 +22,10 @@ const faqs = [
 
 const ProfessionalFAQ = () => {
     return (
-        <div className="w-full bg-gradient-to-b from-white/10 to-white/5 rounded-3xl backdrop-blur-xl shadow-2xl border border-white/10 overflow-hidden">
+        <div className="w-full bg-white/5 rounded-3xl shadow-sm border border-white/10 overflow-hidden">
             <div className="p-8 border-b border-white/10">
                 <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-xl bg-indigo-500/20 text-indigo-400">
+                    <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-400">
                         <HelpCircle className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl font-bold text-white">Professional FAQ</h3>
@@ -37,10 +37,10 @@ const ProfessionalFAQ = () => {
                     <div key={index} className="group" data-aos="fade-up" data-aos-delay={index * 100}>
                         <div className="flex gap-3 mb-2">
                             <Sparkles className="w-5 h-5 text-indigo-400 shrink-0 mt-1" />
-                            <h4 className="text-indigo-200 font-semibold">{faq.question}</h4>
+                            <h4 className="text-white font-semibold">{faq.question}</h4>
                         </div>
                         <div className="pl-8">
-                            <p className="text-gray-400 text-sm leading-relaxed border-l-2 border-white/5 pl-4 group-hover:border-indigo-500/50 transition-colors">
+                            <p className="text-slate-400 text-sm leading-relaxed border-l-2 border-white/10 pl-4 group-hover:border-indigo-500/50 transition-colors">
                                 {faq.answer}
                             </p>
                         </div>
@@ -50,7 +50,7 @@ const ProfessionalFAQ = () => {
                 <div className="mt-8 pt-6 border-t border-white/10">
                     <div className="flex items-center gap-3 p-4 bg-indigo-500/10 rounded-2xl border border-indigo-500/20">
                         <Target className="w-5 h-5 text-indigo-400" />
-                        <p className="text-xs text-indigo-200 uppercase tracking-wider font-medium">
+                        <p className="text-xs text-indigo-300 uppercase tracking-wider font-medium">
                             Ready to learn and grow with your team
                         </p>
                     </div>

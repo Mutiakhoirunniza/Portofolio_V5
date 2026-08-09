@@ -5,10 +5,12 @@ export default {
 		extend: {
 			backdropBlur: {
 				sm: '4px',
-			  },
-			
-			
-		  },
+			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				display: ['Outfit', 'sans-serif'],
+			},
 		},
+	},
 	plugins: [],
 }

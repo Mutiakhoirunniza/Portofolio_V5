@@ -23,7 +23,7 @@ const ScrollProgress = () => {
             }}
         >
             <div
-                className="h-full bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#6366f1] transition-all duration-150 ease-out shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+                className="h-full bg-indigo-500 transition-all duration-150 ease-out"
                 style={{
                     width: `${scrollProgress}%`,
                 }}

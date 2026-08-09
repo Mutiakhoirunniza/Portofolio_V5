@@ -33,7 +33,7 @@ const CustomCursor = () => {
                 className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[10000] hidden md:block"
                 style={{
                     transform: `translate(${position.x - 24}px, ${position.y - 24}px) scale(${isHovering ? 2 : 1})`,
-                    background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.05) 50%, transparent 100%)',
+                    background: 'radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0.06) 50%, transparent 100%)',
                     filter: 'blur(8px)',
                     transition: 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease',
                 }}
