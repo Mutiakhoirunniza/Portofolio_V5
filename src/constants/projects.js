@@ -2,7 +2,7 @@ export const PROJECTS = [
     {
         id: 1,
         Title: "Healthify",
-        Description: "Sistem Manajemen Layanan Kesehatan terintegrasi yang menghubungkan pasien, dokter, dan admin dalam satu ekosistem, didukung oleh backend Golang yang tangguh serta integrasi AI untuk layanan kesehatan modern.",
+        Description: "Sistem Manajemen Layanan Kesehatan terintegrasi yang menghubungkan pasien, dokter, dan admin dalam satu ekosistem, didukung oleh backend Golang yang tangguh serta integrasi AI untuk layanan kesehatan modern. Demo login — Doctor: dokter@test.com / doktertest123, Admin: admin@test.com / admintest123",
         Img: "/projects/healthify.jpg",
         Link: "https://fe-react-landing-page.vercel.app/",
         Github: "https://github.com/Health-Care-System/BackEnd-Golang",
