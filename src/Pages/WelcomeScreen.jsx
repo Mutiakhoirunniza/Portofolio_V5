@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, Github, Globe, User } from 'lucide-react';
 import AOS from 'aos';
@@ -29,6 +30,10 @@ const TypewriterEffect = ({ text }) => {
   );
 };
 
+TypewriterEffect.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
 const BackgroundEffect = () => (
   <div className="absolute inset-0 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 blur-3xl animate-pulse" />
@@ -44,6 +49,10 @@ const IconButton = ({ Icon }) => (
     </div>
   </div>
 );
+
+IconButton.propTypes = {
+  Icon: PropTypes.elementType.isRequired,
+};
 
 const WelcomeScreen = ({ onLoadingComplete }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -172,6 +181,10 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
       )}
     </AnimatePresence>
   );
+};
+
+WelcomeScreen.propTypes = {
+  onLoadingComplete: PropTypes.func,
 };
 
 export default WelcomeScreen;

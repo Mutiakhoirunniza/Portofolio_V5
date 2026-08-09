@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+
+const navItems = [
+    { href: "#Home", label: "Home" },
+    { href: "#About", label: "About" },
+    { href: "#Portofolio", label: "Portofolio" },
+    { href: "#Contact", label: "Contact" },
+];
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("Home");
-
-    const navItems = [
-        { href: "#Home", label: "Home" },
-        { href: "#About", label: "About" },
-        { href: "#Portofolio", label: "Portofolio" },
-        { href: "#Contact", label: "Contact" },
-    ];
 
     useEffect(() => {
         const handleScroll = () => {

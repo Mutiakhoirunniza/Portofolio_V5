@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState, lazy, Suspense } from "react";
+import { useState, Suspense } from "react";
+import PropTypes from "prop-types";
 import { HelmetProvider } from "react-helmet-async";
 import "./index.css";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import AnimatedBackground from "./components/Common/Background";
 import Navbar from "./components/Layout/Navbar";
 import Portofolio from "./Pages/Portofolio";
 import ContactPage from "./Pages/Contact";
@@ -54,6 +54,11 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       )}
     </>
   );
+};
+
+LandingPage.propTypes = {
+  showWelcome: PropTypes.bool.isRequired,
+  setShowWelcome: PropTypes.func.isRequired,
 };
 
 const ProjectPageLayout = () => (

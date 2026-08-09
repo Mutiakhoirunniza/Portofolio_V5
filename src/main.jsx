@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import ReactDOM from "react-dom/client"
 import App from "./App.jsx"
 import "./index.css"
@@ -32,6 +33,10 @@ class ErrorBoundary extends React.Component {
 		return this.props.children;
 	}
 }
+
+ErrorBoundary.propTypes = {
+	children: PropTypes.node,
+};
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<ErrorBoundary>

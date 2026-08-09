@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { supabase } from "../../supabase";
 import { Award, Upload, Trash2, ImageIcon, Plus } from 'lucide-react'
 
@@ -10,6 +11,11 @@ const Card = ({ children, className = '' }) => (
     </div>
   </div>
 )
+
+Card.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+}
 
 const SkeletonCard = () => (
   <div className="relative">
@@ -50,6 +56,14 @@ const CertCard = ({ cert, onDelete }) => {
       </div>
     </div>
   )
+}
+
+CertCard.propTypes = {
+  cert: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    Img: PropTypes.string,
+  }).isRequired,
+  onDelete: PropTypes.func.isRequired,
 }
 
 export default function Certificates() {

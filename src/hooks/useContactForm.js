@@ -43,7 +43,7 @@ export const useContactForm = () => {
                 });
                 setFormData({ name: "", email: "", message: "" });
             }
-        } catch (error) {
+        } catch {
             Swal.fire({
                 title: 'Error!',
                 text: 'Terjadi kesalahan. Silakan coba lagi nanti.',

@@ -81,7 +81,7 @@ npm run build
 ## 📞 Get In Touch
 
 **Mutia Khoirunniza**
-- **Website:** [diahmutiakhoirunniza.vercel.app](https://www.diahmutiakhoirunniza.vercel.app/)
+- **Website:** [diahmutiakhoirunniza.vercel.app](https://diahmutiakhoirunniza.vercel.app/)
 - **GitHub:** [Mutiakhoirunniza](https://github.com/Mutiakhoirunniza)
 - **LinkedIn:** [diahmutia](https://www.linkedin.com/in/diahmutia/)
 

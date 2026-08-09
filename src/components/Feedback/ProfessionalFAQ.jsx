@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import { HelpCircle, Sparkles, BookOpen, Target } from 'lucide-react';
+import { memo } from 'react';
+import { HelpCircle, Sparkles, Target } from 'lucide-react';
 
 const faqs = [
     {

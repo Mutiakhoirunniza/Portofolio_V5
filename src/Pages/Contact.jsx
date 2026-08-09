@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Share2, User, Mail, MessageSquare, Send } from "lucide-react";
 import SocialLinks from "../components/Social/SocialLinks";
 import ProfessionalFAQ from "../components/Feedback/ProfessionalFAQ";

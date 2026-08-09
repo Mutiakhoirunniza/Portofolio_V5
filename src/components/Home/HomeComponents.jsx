@@ -1,4 +1,5 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
+import PropTypes from 'prop-types';
 import { Sparkles } from 'lucide-react';
 
 export const StatusBadge = memo(() => (
@@ -14,6 +15,7 @@ export const StatusBadge = memo(() => (
         </div>
     </div>
 ));
+StatusBadge.displayName = 'StatusBadge';
 
 export const MainTitle = memo(() => (
     <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
@@ -33,12 +35,17 @@ export const MainTitle = memo(() => (
         </h1>
     </div>
 ));
+MainTitle.displayName = 'MainTitle';
 
 export const TechStack = memo(({ tech }) => (
     <div className="px-4 py-2 hidden sm:block rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
         {tech}
     </div>
 ));
+TechStack.displayName = 'TechStack';
+TechStack.propTypes = {
+    tech: PropTypes.node.isRequired,
+};
 
 export const CTAButton = memo(({ href, text, icon: Icon }) => (
     <a href={href}>
@@ -56,6 +63,12 @@ export const CTAButton = memo(({ href, text, icon: Icon }) => (
         </button>
     </a>
 ));
+CTAButton.displayName = 'CTAButton';
+CTAButton.propTypes = {
+    href: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    icon: PropTypes.elementType.isRequired,
+};
 
 export const SocialLink = memo(({ icon: Icon, link }) => (
     <a href={link} target="_blank" rel="noopener noreferrer">
@@ -67,3 +80,8 @@ export const SocialLink = memo(({ icon: Icon, link }) => (
         </button>
     </a>
 ));
+SocialLink.displayName = 'SocialLink';
+SocialLink.propTypes = {
+    icon: PropTypes.elementType.isRequired,
+    link: PropTypes.string.isRequired,
+};

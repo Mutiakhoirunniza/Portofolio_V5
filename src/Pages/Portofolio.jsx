@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
-
-import { supabase } from "../services/supabase";
+import { useEffect, useState, useCallback } from "react";
 
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
@@ -71,6 +69,10 @@ duration - 300
   </button>
 );
 
+ToggleButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  isShowingMore: PropTypes.bool.isRequired,
+};
 
 function TabPanel({ children, value, index, ...other }) {
   return (

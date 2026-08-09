@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { supabase } from "../../supabase";
 import {
   Plus,
@@ -20,6 +21,11 @@ const Card = ({ children, className = "" }) => (
     </div>
   </div>
 );
+
+Card.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
 
 const InputField = ({
   label,
@@ -43,6 +49,15 @@ const InputField = ({
     />
   </div>
 );
+
+InputField.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+  required: PropTypes.bool,
+};
 
 const SkeletonCard = () => (
   <div className="relative">
@@ -153,6 +168,20 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
   );
 };
 
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    Img: PropTypes.string,
+    Title: PropTypes.string,
+    Description: PropTypes.string,
+    TechStack: PropTypes.arrayOf(PropTypes.string),
+    Link: PropTypes.string,
+    Github: PropTypes.string,
+  }).isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
+};
+
 const Modal = ({ title, onClose, children }) => (
   <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6">
     <div
@@ -182,6 +211,12 @@ const Modal = ({ title, onClose, children }) => (
     </div>
   </div>
 );
+
+Modal.propTypes = {
+  title: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node,
+};
 
 const ProjectForm = ({
   initial,
@@ -329,6 +364,28 @@ const ProjectForm = ({
       </div>
     </form>
   );
+};
+
+ProjectForm.propTypes = {
+  initial: PropTypes.shape({
+    Title: PropTypes.string,
+    Description: PropTypes.string,
+    TechStack: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.string,
+    ]),
+    Features: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.string,
+    ]),
+    Link: PropTypes.string,
+    Github: PropTypes.string,
+    Img: PropTypes.string,
+  }),
+  onSubmit: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  submitLabel: PropTypes.string,
+  uploading: PropTypes.bool,
 };
 
 export default function Projects() {

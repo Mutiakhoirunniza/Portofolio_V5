@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet-async";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import {
   ArrowLeft, ExternalLink, Github, Code2, Star,
   ChevronRight, Layers, Layout, Globe, Package, Cpu, Code, CheckCircle2
 } from "lucide-react";
 import Swal from 'sweetalert2';
 import { PROJECTS } from "../../constants";
+import { toSlug } from "../../utils/slug";
 
 const TECH_ICONS = {
   React: Globe,
@@ -35,6 +37,10 @@ const TechBadge = ({ tech }) => {
   );
 };
 
+TechBadge.propTypes = {
+  tech: PropTypes.string.isRequired,
+};
+
 const FeatureItem = ({ feature }) => {
   return (
     <li className="group relative flex items-start space-x-3 p-3 md:p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-blue-500/30 hover:bg-blue-500/5 transition-all duration-300">
@@ -47,6 +53,10 @@ const FeatureItem = ({ feature }) => {
       </span>
     </li>
   );
+};
+
+FeatureItem.propTypes = {
+  feature: PropTypes.string.isRequired,
 };
 
 const ProjectStats = ({ project }) => {
@@ -93,6 +103,13 @@ const ProjectStats = ({ project }) => {
   );
 };
 
+ProjectStats.propTypes = {
+  project: PropTypes.shape({
+    TechStack: PropTypes.array,
+    Features: PropTypes.array,
+  }),
+};
+
 const handleGithubClick = (githubLink) => {
   if (githubLink === "Private") {
     Swal.fire({
@@ -113,11 +130,13 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const selectedProject = PROJECTS.find((p) => String(p.id) === id);
+    const selectedProject = PROJECTS.find(
+      (p) => toSlug(p.Title) === id || String(p.id) === id
+    );
 
     if (selectedProject) {
       const enhancedProject = {
@@ -127,8 +146,14 @@ const ProjectDetails = () => {
         Github: selectedProject.Github || 'https://github.com/Mutiakhoirunniza',
       };
       setProject(enhancedProject);
+    } else {
+      setNotFound(true);
     }
   }, [id]);
+
+  if (notFound) {
+    return <Navigate to="/404" replace />;
+  }
 
   if (!project) {
     return (
@@ -143,7 +168,6 @@ const ProjectDetails = () => {
     );
   }
 
-  const toSlug = (title) => title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
   const projectUrl = `https://diahmutiakhoirunniza.vercel.app/project/${toSlug(project.Title)}`;
 
   return (
@@ -300,7 +324,6 @@ const ProjectDetails = () => {
                     src={project.Img}
                     alt={project.Title}
                     className="w-full  object-cover transform transition-transform duration-700 will-change-transform group-hover:scale-105"
-                    onLoad={() => setIsImageLoaded(true)}
                   />
                   <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/10 transition-colors duration-300 rounded-2xl" />
                 </div>

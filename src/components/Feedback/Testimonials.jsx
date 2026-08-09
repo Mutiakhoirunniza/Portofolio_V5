@@ -1,4 +1,5 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
+import PropTypes from 'prop-types';
 import { Star, Quote, UserCircle2 } from 'lucide-react';
 
 const testimonials = [
@@ -37,7 +38,7 @@ const TestimonialCard = memo(({ testimonial }) => (
         </div>
 
         <p className="text-gray-300 text-sm italic mb-6 leading-relaxed">
-            "{testimonial.content}"
+            &quot;{testimonial.content}&quot;
         </p>
 
         <div className="flex items-center gap-3">
@@ -51,6 +52,16 @@ const TestimonialCard = memo(({ testimonial }) => (
         </div>
     </div>
 ));
+TestimonialCard.displayName = 'TestimonialCard';
+TestimonialCard.propTypes = {
+    testimonial: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        name: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+        rating: PropTypes.number.isRequired,
+    }).isRequired,
+};
 
 const Testimonials = () => {
     return (

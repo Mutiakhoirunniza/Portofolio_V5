@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import PropTypes from "prop-types";
 import { supabase } from "../../supabase";
 import {
   MessageSquare,
@@ -22,6 +23,11 @@ const Card = ({ children, className = "" }) => (
     </div>
   </div>
 );
+
+Card.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
@@ -190,8 +196,8 @@ export default function Comments() {
       {/* Result count when searching */}
       {search && (
         <p className="text-xs text-gray-500 -mt-3">
-          {filtered.length} result{filtered.length !== 1 ? "s" : ""} for "
-          {search}"
+          {filtered.length} result{filtered.length !== 1 ? "s" : ""} for &quot;
+          {search}&quot;
         </p>
       )}
 

@@ -1,5 +1,6 @@
-import React, { useEffect, memo, useMemo } from "react"
-import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react"
+import { useEffect, memo, useMemo } from "react"
+import PropTypes from "prop-types"
+import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles } from "lucide-react"
 import { PROJECTS, CERTIFICATES } from "../constants"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -27,6 +28,7 @@ const Header = memo(() => (
     </p>
   </div>
 ));
+Header.displayName = "Header";
 
 const ProfileImage = memo(() => (
   <div className="flex justify-end items-center sm:p-12 sm:py-0 sm:pb-0 p-0 py-2 pb-2">
@@ -66,6 +68,7 @@ const ProfileImage = memo(() => (
     </div>
   </div>
 ));
+ProfileImage.displayName = "ProfileImage";
 
 const StatCard = memo(({ icon: Icon, color, value, label, description, animation }) => (
   <div data-aos={animation} data-aos-duration={1300} className="relative group">
@@ -110,6 +113,15 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
     </div>
   </div>
 ));
+StatCard.displayName = "StatCard";
+StatCard.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  color: PropTypes.string.isRequired,
+  value: PropTypes.node.isRequired,
+  label: PropTypes.node.isRequired,
+  description: PropTypes.node.isRequired,
+  animation: PropTypes.string,
+};
 
 const AboutPage = () => {
   // Memoized calculations
@@ -197,7 +209,7 @@ const AboutPage = () => {
               data-aos-duration="1000"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                Hello, I'm
+                Hello, I&apos;m
               </span>
               <span
                 className="block mt-2 text-gray-200 whitespace-nowrap"
@@ -235,7 +247,7 @@ const AboutPage = () => {
               </div>
 
               <blockquote className="text-gray-300 text-center lg:text-left italic font-medium text-sm relative z-10 pl-6">
-                "Leveraging AI as a professional tool, not a replacement."
+                &ldquo;Leveraging AI as a professional tool, not a replacement.&rdquo;
               </blockquote>
             </div>
 
